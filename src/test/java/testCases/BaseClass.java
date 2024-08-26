@@ -30,7 +30,7 @@ public class BaseClass {
 			options.addArguments("--no-sandbox");
 			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--headless");
-		    driver=new ChromeDriver();
+		    driver=new ChromeDriver(options);
 		    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		    driver.get(p.getProperty("appURL")); // Reading URL from config.properties file
 			driver.manage().window().maximize();
