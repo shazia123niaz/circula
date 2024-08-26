@@ -2,27 +2,27 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-26T16:01:53 PKT" name="Default suite" finished-at="2024-08-26T16:02:04 PKT" duration-ms="11112">
+  <suite started-at="2024-08-27T00:01:07 PKT" name="Default suite" finished-at="2024-08-27T00:01:20 PKT" duration-ms="13387">
     <groups>
       <group name="functional">
         <method signature="Tc001_SignUpTest.testSignUp()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" name="testSignUp" class="testCases.Tc001_SignUpTest"/>
       </group> <!-- functional -->
     </groups>
-    <test started-at="2024-08-26T16:01:53 PKT" name="Default test" finished-at="2024-08-26T16:02:04 PKT" duration-ms="11112">
+    <test started-at="2024-08-27T00:01:07 PKT" name="Default test" finished-at="2024-08-27T00:01:20 PKT" duration-ms="13387">
       <class name="testCases.Tc001_SignUpTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-26T16:01:53 PKT" name="setup" finished-at="2024-08-26T16:01:58 PKT" duration-ms="5324" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-27T00:01:07 PKT" name="setup" finished-at="2024-08-27T00:01:15 PKT" duration-ms="7785" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testSignUp()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-26T16:01:58 PKT" name="testSignUp" finished-at="2024-08-26T16:02:03 PKT" duration-ms="5538" status="PASS">
+        <test-method signature="testSignUp()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-27T00:01:15 PKT" name="testSignUp" finished-at="2024-08-27T00:01:20 PKT" duration-ms="5337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSignUp -->
-        <test-method signature="testURL()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-26T16:02:03 PKT" name="testURL" finished-at="2024-08-26T16:02:03 PKT" duration-ms="13" status="PASS">
+        <test-method signature="testURL()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-27T00:01:20 PKT" name="testURL" finished-at="2024-08-27T00:01:20 PKT" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testURL -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-26T16:02:03 PKT" name="tearDown" finished-at="2024-08-26T16:02:04 PKT" duration-ms="178" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-27T00:01:20 PKT" name="tearDown" finished-at="2024-08-27T00:01:20 PKT" duration-ms="172" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

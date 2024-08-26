@@ -9,6 +9,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -25,6 +26,10 @@ public class BaseClass {
 			p=new Properties();
 			p.load(file);
 			
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--headless");
 		    driver=new ChromeDriver();
 		    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		    driver.get(p.getProperty("appURL")); // Reading URL from config.properties file
