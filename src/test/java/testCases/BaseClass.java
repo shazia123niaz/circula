@@ -27,9 +27,10 @@ public class BaseClass {
 			p.load(file);
 			
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("--headless");
+//			options.addArguments("--no-sandbox");
+//			options.addArguments("--disable-dev-shm-usage");
+//			options.addArguments("--headless");
+			options.addArguments("--window-size=1920x1080");
 		    driver=new ChromeDriver(options);
 		    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		    driver.get(p.getProperty("appURL")); // Reading URL from config.properties file

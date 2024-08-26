@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import pageObjects.PageObject_SignUp;
 
-public class Tc001_SignUpTest extends BaseClass{
+public class Tc002_SignUpTest_Validations extends BaseClass{
    
 	@Test
 	void testURL()
@@ -23,23 +23,18 @@ public class Tc001_SignUpTest extends BaseClass{
 	    // accept cookies
 	    ps.acceptCookies();
 	    
-	    // Fill form
-	    ps.setFirstname(randomeString().toUpperCase());
-	    ps.setLastname(randomeString().toUpperCase()); 
-	    ps.setworkEmail(randomeString()+"@ndiety.com");
-	    ps.setPassword(randomeAlphaNumeric());
-	    ps.setCompany(randomeString().toUpperCase());
-	    ps.setPhoneNumber(randomeNumber());
-	    ps.setCountry();
-	    ps.setComment(randomeString().toUpperCase());
-	    ps.checkTermsAndConditions();
-	    ps.checkNewsletter();
-	    
-	    Thread.sleep(100);
+	    // Try to submit empty form to see all errors
 	    ps.clickCreateAccount();
+	    
+	    // Check errors in form
+	    Assert.assertEquals(ps.getFirstnameError(), "First name is required.");
+	    Assert.assertEquals(ps.getLastnameError(), "Last name is required.");
+	    Assert.assertEquals(ps.getWorkEmailError(), "Work e-mail is required.");
+	    Assert.assertEquals(ps.getCompanyError(), "Company name is required.");
+	    Assert.assertEquals(ps.getCommentError(), "Please explain, how you discovered Circula.");
 
 	    Thread.sleep(100);
-	    ps.takeScreenshot("success");
+	    ps.takeScreenshot("validation");
 	}
 	
 }

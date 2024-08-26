@@ -25,7 +25,7 @@ public class PageObject_SignUp extends BasePage {
         super(driver);
     }
 
-    // Locators
+    // Selectors
     By selectorFirstname = By.xpath("//input[@id='textfield-:Rimkmm:']");
     By selectorLastname = By.id("textfield-:R12mkmm:");
     By selectorWorkEmail = By.id("textfield-:Rjmkmm:");
@@ -36,7 +36,17 @@ public class PageObject_SignUp extends BasePage {
     By selectorCountryList = By.cssSelector("[data-testid='autocomplete-menu-portal']");
     By selectorCountry = By.xpath("//li/div[text()='Sweden']");
     By selectorComment = By.id("textfield-:R6mkmm:");
+    By selectorTermsAndConditions = By.cssSelector("[name='acceptTos']");
+    By selectorNewsletter = By.cssSelector("[name='sendNewsletter']");
     By selectorCreateAccount = By.cssSelector(".sc-920edc59-0.geGaiv");
+    
+    
+    // Error Selectors
+    By selectorFirstnameError = By.cssSelector("label[for='textfield-:Rimkmm:'] div[class='sc-b4bf297b-0 jQHmRc']");
+    By selectorLastnameError = By.cssSelector("label[for='textfield-:R12mkmm:'] div[class='sc-b4bf297b-0 jQHmRc']");
+    By selectorCompanyError = By.cssSelector("label[for='textfield-:R14mkmm:'] div[class='sc-b4bf297b-0 jQHmRc']");
+    By selectorWorkEmailError = By.cssSelector("label[for='textfield-:Rjmkmm:'] div[class='sc-b4bf297b-0 jQHmRc']");
+    By selectorCommentError = By.cssSelector("label[for='textfield-:R6mkmm:'] div[class='sc-b4bf297b-0 jQHmRc']");
 
     
     // -------------- Action methods-------------------------------
@@ -53,33 +63,28 @@ public class PageObject_SignUp extends BasePage {
 
 
     //  Enter first name
-    public void setFirstname(String fname) {
-        driver.findElement(selectorFirstname).sendKeys(fname);
-
+    public void setFirstname(String firstName) {
+        driver.findElement(selectorFirstname).sendKeys(firstName);
     }
 
     //  Enter last name
-    public void setLastname(String lname) {
-        driver.findElement(selectorLastname).sendKeys(lname);
-
+    public void setLastname(String lastName) {
+        driver.findElement(selectorLastname).sendKeys(lastName);
     }
 
     //  Enter work Email
     public void setworkEmail(String email) {
         driver.findElement(selectorWorkEmail).sendKeys(email);
-
     }
 
     //  Enter password	 
-    public void setPassword(String pwd) {
-        driver.findElement(selectorPassword).sendKeys(pwd);
-
+    public void setPassword(String password) {
+        driver.findElement(selectorPassword).sendKeys(password);
     }
 
     //  Enter Company Name	 
     public void setCompany(String company) {
         driver.findElement(selectorCompany).sendKeys(company);
-
     }
 
     //  Set Sweden Country	 
@@ -112,7 +117,7 @@ public class PageObject_SignUp extends BasePage {
         Thread.sleep(100);
 
         // select checkbox
-        WebElement checkbox = driver.findElement(By.cssSelector("[name='acceptTos']"));
+        WebElement checkbox = driver.findElement(selectorTermsAndConditions);
         ((JavascriptExecutor) driver).executeScript(
             "arguments[0].click();", checkbox);
     }
@@ -123,7 +128,7 @@ public class PageObject_SignUp extends BasePage {
         Thread.sleep(100);
 
         // select checkbox
-        WebElement checkbox = driver.findElement(By.cssSelector("[name='sendNewsletter']"));
+        WebElement checkbox = driver.findElement(selectorNewsletter);
         ((JavascriptExecutor) driver).executeScript(
             "arguments[0].click();", checkbox);
     }
@@ -132,23 +137,46 @@ public class PageObject_SignUp extends BasePage {
     //  Enter phone number
     public void setPhoneNumber(String phoneNumber) {
         driver.findElement(selectorPhoneNumber).sendKeys(phoneNumber);
-
     }
 
     // Click on Create account button
     public void clickCreateAccount() {
         driver.findElement(selectorCreateAccount).click();
-
     }
 
     // Take screenshot of screen
-    public void takeScreenshot() throws IOException {
+    public void takeScreenshot(String fileName) throws IOException {
         try {
         	Path currentRelativePath = Paths.get("");
         	String pathToCreateFile = currentRelativePath.toAbsolutePath().toString();
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            FileHandler.copy(scrFile, new File(pathToCreateFile + "\\src\\test\\java\\screenshots\\screenshot.png"));
+            FileHandler.copy(scrFile, new File(pathToCreateFile + "\\src\\test\\java\\screenshots\\" + fileName + ".png"));
         } catch (IOException e) {}
     }
+    
+    //  Get first name field error
+    public String getFirstnameError() {
+        return driver.findElement(selectorFirstnameError).getText();
+    }
 
+    //  Get last name field error
+    public String getLastnameError() {
+        return driver.findElement(selectorLastnameError).getText();
+    }
+
+    //  Get work email field error
+    public String getWorkEmailError() {
+        return driver.findElement(selectorWorkEmailError).getText();
+    }
+
+    //  Get Company Name field error 
+    public String getCompanyError() {
+        return driver.findElement(selectorCompanyError).getText();
+    }
+    
+    //  Get Comment field error 
+    public String getCommentError() {
+        return driver.findElement(selectorCommentError).getText();
+    }
+    
 }

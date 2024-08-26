@@ -6,8 +6,9 @@
  </listeners>
 
   <test name="Test">
-        <classes>
+    <classes>
       <class name="testCases.Tc001_SignUpTest"/>
+      <class name="testCases.Tc002_SignUpTest_Validations"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
