@@ -9,7 +9,6 @@ public class BasePage {
 	public BasePage(WebDriver driver)
 	{
 		this.driver=driver;
-		
 	}
 
 }
