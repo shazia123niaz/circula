@@ -1,21 +1,8 @@
 package testCases;
 
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
 import java.io.IOException;
-import java.time.Duration;
-
-import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 import pageObjects.PageObject_SignUp;
 
 
@@ -24,9 +11,7 @@ public class Tc001_SignUpTest extends BaseClass{
 	@Test
 	void testURL()
 	{
-	
 		Assert.assertEquals(driver.getCurrentUrl(),"https://app.circula.com/users/sign_up");
-		
 	}
 	
 	@Test (groups={"functional"})
