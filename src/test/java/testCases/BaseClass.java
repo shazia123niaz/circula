@@ -14,58 +14,49 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class BaseClass {
-	
-	 public WebDriver driver;
-	 public Properties p;
-		@BeforeClass
-		void setup() throws IOException
-		{
-			// loading config.properties file
-			
-			FileReader file=new FileReader(".//src//test//resources//config.properties");
-			p=new Properties();
-			p.load(file);
-			
-			ChromeOptions options = new ChromeOptions();
-//			options.addArguments("--no-sandbox");
-//			options.addArguments("--disable-dev-shm-usage");
-//			options.addArguments("--headless");
-			options.addArguments("--window-size=1920x1080");
-		    driver=new ChromeDriver(options);
-		    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		    driver.get(p.getProperty("appURL")); // Reading URL from config.properties file
-			driver.manage().window().maximize();
-		    driver.findElement(By.xpath("//a[normalize-space()='Start a free trial']")).click();
-		}
-		
-		public String randomeString()
-		{
-			
-			String generatestring=RandomStringUtils.randomAlphabetic(5); 
-		    return generatestring;
-		}
-		
-		public String randomeNumber()
-		{
-			
-			String generatenumbers=RandomStringUtils.randomNumeric(13);
-		    return generatenumbers;
-		}
-		public String randomeAlphaNumeric()
-		{
-			
-			String generatestring=RandomStringUtils.randomAlphabetic(5); 
-			String generatenumbers=RandomStringUtils.randomNumeric(4);
-		    return (generatestring+"@"+generatenumbers);
-		}
-		
-		@AfterClass
-	    void tearDown()
-	    {
-	    	driver.quit();
-	    	
-	    }
-	
-	
+
+    public WebDriver driver;
+    public Properties p;
+
+    @BeforeClass
+    void setup() throws IOException {
+        // loading config.properties file
+
+        FileReader file = new FileReader(".//src//test//resources//config.properties");
+        p = new Properties();
+        p.load(file);
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        options.addArguments("--window-size=1920x1080");
+        driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get(p.getProperty("appURL")); // Reading URL from config.properties file
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//a[normalize-space()='Start a free trial']")).click();
+    }
+
+    public String randomeString() {
+        String generatestring = RandomStringUtils.randomAlphabetic(5);
+        return generatestring;
+    }
+
+    public String randomeNumber() {
+        String generatenumbers = RandomStringUtils.randomNumeric(13);
+        return generatenumbers;
+    }
+
+    public String randomeAlphaNumeric() {
+        String generatestring = RandomStringUtils.randomAlphabetic(5);
+        String generatenumbers = RandomStringUtils.randomNumeric(4);
+        return (generatestring + "@" + generatenumbers);
+    }
+
+    @AfterClass
+    void tearDown() {
+        driver.quit();
+    }
 
 }
