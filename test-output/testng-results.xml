@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-08-26T05:02:21 PKT" name="Default suite" finished-at="2024-08-26T05:02:30 PKT" duration-ms="8988">
+    <groups>
+      <group name="functional">
+        <method signature="Tc001_SignUpTest.testSignUp()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" name="testSignUp" class="testCases.Tc001_SignUpTest"/>
+      </group> <!-- functional -->
+    </groups>
+    <test started-at="2024-08-26T05:02:21 PKT" name="Default test" finished-at="2024-08-26T05:02:30 PKT" duration-ms="8988">
+      <class name="testCases.Tc001_SignUpTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-26T05:02:21 PKT" name="setup" finished-at="2024-08-26T05:02:26 PKT" duration-ms="4499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testSignUp()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-26T05:02:26 PKT" name="testSignUp" finished-at="2024-08-26T05:02:30 PKT" duration-ms="4259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSignUp -->
+        <test-method signature="testURL()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-26T05:02:30 PKT" name="testURL" finished-at="2024-08-26T05:02:30 PKT" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testURL -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.Tc001_SignUpTest@19b843ba]" started-at="2024-08-26T05:02:30 PKT" name="tearDown" finished-at="2024-08-26T05:02:30 PKT" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.Tc001_SignUpTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
